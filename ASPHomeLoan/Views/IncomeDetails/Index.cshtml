@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ASPHome.Models.IncomeDetails>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Income Details</h2>
+
+<p>@Html.ActionLink("Create New", "Create")</p>
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.ProperityLocation)</th>
+        <th>@Html.DisplayNameFor(model => model.ProperityName)</th>
+        <th>@Html.DisplayNameFor(model => model.EstimatedAmount)</th>
+        <th>@Html.DisplayNameFor(model => model.TypeOfEmployeement)</th>
+        <th>@Html.DisplayNameFor(model => model.RetirementAge)</th>
+        <th>@Html.DisplayNameFor(model => model.OrganizationType)</th>
+        <th>@Html.DisplayNameFor(model => model.EmployeeName)</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.ProperityLocation)</td>
+            <td>@Html.DisplayFor(modelItem => item.ProperityName)</td>
+            <td>@Html.DisplayFor(modelItem => item.EstimatedAmount)</td>
+            <td>@Html.DisplayFor(modelItem => item.TypeOfEmployeement)</td>
+            <td>@Html.DisplayFor(modelItem => item.RetirementAge)</td>
+            <td>@Html.DisplayFor(modelItem => item.OrganizationType)</td>
+            <td>@Html.DisplayFor(modelItem => item.EmployeeName)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ApplicationId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ApplicationId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ApplicationId })
+            </td>
+        </tr>
+
+    }
+</table>
+
+<div>
+    <button><a href="https://localhost:44393/Loans/Create">Next</a></button>
+</div>

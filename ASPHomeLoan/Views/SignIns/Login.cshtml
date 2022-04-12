@@ -1,0 +1,23 @@
+﻿@model ASPHome.Models.SignIn
+@{
+    ViewBag.Title = "Login";
+
+}
+
+
+@using (Html.BeginForm("Details"))
+{
+
+    <div class="form-horizontal " style="text-align: center;margin: 12% 10% 12% 1%;">
+        <h1>Login</h1>
+        <br />
+        <p>User Name: @Html.TextBoxFor(a => a.UserName)</p>
+        <p>Password: @Html.TextBoxFor(a => a.Password)</p>
+        <div style="margin: 2% 0% 0% 4%;">
+            <span><input type="submit" value="Login" name="loginin" class="btn btn-primary"></span>
+            <button class="btn btn-default"><a href="https://localhost:44393/SignIns/Create">? SignIn</a></button>
+        </div>
+    </div>
+
+
+}
